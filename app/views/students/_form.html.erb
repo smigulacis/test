@@ -1,0 +1,14 @@
+<%= form_for @student do |f| -%>
+<% if @positionData %>
+ Darba vieta: <%= collection_select(:position, :id, @positionData, :id, :title, options ={:prompt => "Izvēlies"}) %><br />
+<% end%>
+ Vārds: <%= f.text_field :vards %><br />
+ Uzvārds: <%= f.text_field :uzvards %><br />
+ Rezidents: <%= f.check_box :rezident %><br />
+ <% if params[:id]%>
+	 <%= f.submit "Labot" %>
+ <% else	%>
+ 	<%= f.submit "Pievienot" %>
+ <% end %>
+
+<% end -%>

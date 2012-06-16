@@ -1,0 +1,24 @@
+<h1><%= flash[:notice] %></h1>
+<%= form_for students_path, :method => "get" do |f| -%>
+ Meklēt: <%= text_field_tag :meklet, params[:meklet] %><br />
+ <%= submit_tag "Meklēt", :name => nil %>
+<% end -%> 
+
+<%= render :partial => 'form'  %>
+
+<ol>
+  <% for item in @studentsData %>
+    <% if item.vards == "Edmunds" %>
+        <li><strong><%= item.vards %>, <%= item.uzvards %></strong></li>
+    <% else %>    
+        <li>
+        <%= item.vards %>, <%= item.uzvards %> 
+        <%= link_to 'Labot', student_path(item) %> 
+        <%= link_to 'Dzēst', item, :confirm => 'Vai  vēlies dzēst?', :method => :delete %>
+        </li>
+    <% end %>
+    
+  <% end %>
+</ol>  
+
+

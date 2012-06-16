@@ -1,0 +1,13 @@
+<%= form_for @student do |f| -%>
+
+<%=	debug(@positionData) %>
+
+ Vārds: <%= f.text_field :vards %><br />
+ Uzvārds: <%= f.text_field :uzvards %><br />
+ <% if params[:id]%>
+	 <%= f.submit "Labot" %>
+ <% else	%>
+ 	<%= f.submit "Pievienot" %>
+ <% end %>
+ 
+<% end -%>

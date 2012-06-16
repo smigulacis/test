@@ -1,0 +1,11 @@
+<ol>
+<% @tests.each do |forma| %>
+    <td><%= forma.vards %></td>
+    <td><%= forma.comment %></td>
+    <td><%= link_to 'Parādīt', forma %></td>
+    <td><%= link_to 'Labot', edit_forma_path(forma) %></td>
+    <td><%= link_to 'Dzēst', forma, :confirm => 'Vai  vēlies dzēst?', :method => :delete %></td>
+  </tr>
+<% end %>
+</ol>
+<%= link_to 'Jauns ieraksts', new_forma_path %>

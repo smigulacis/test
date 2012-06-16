@@ -1,0 +1,5 @@
+<h1>Jauns ieraksts</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Atpakaļ', formas_path %>
